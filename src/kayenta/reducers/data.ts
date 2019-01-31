@@ -131,6 +131,9 @@ const metricsServiceMetadata = combineReducers<IMetricsServiceMetadataState>({
       [Actions.UPDATE_GRAPHITE_METRIC_NAME]: (state: IMetricsServiceMetadata, action: Action & any) => {
         return action.payload.metricName ? state : [];
       },
+      [Actions.UPDATE_OPENTSDB_METRIC_NAME]: (state: IMetricsServiceMetadata, action: Action & any) => {
+        return action.payload.metricName ? state : [];
+      },        
       [Actions.EDIT_METRIC_BEGIN]: () => [],
     },
     [],

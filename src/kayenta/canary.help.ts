@@ -101,11 +101,19 @@ const helpContents: { [key: string]: string } = {
     <p>This method is used to construct the compiled SignalFlow program. EX:<pre>data('request.count', filters=filter('uri', 'v1/some-endpoint') and filter('status_code', '5*') and filter('version', '1.0.0') and filter('environment', 'production')).sum(by=['version', 'environment']).publish()</pre>
         Note that the version and environment k,v pairs are sourced from the canary scope. The other k,v pairs come from the metric specific k,v pair list.
     </p>
-  `,
+`,
+  'canary.config.opentsdb.aggregator': `
+    <p>This is an OpenTSDB aggregator defined at <a target="_blank" href="http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html">OpenTSDB Aggregators</a></p>
+    <p>These are aggregations such as sum, zimsum, min, max, etc.</p>
+  `,    
   'canary.config.prometheus.queryType': `
     <p>Select <strong>default</strong> to use options from the UI to configure your query.</p>
     <p>Select <strong>PromQL</strong> to compose a custom PromQL query (see <a target="blank" href="https://prometheus.io/docs/prometheus/latest/querying/basics/">documentation</a>).</p>
-  `,
+`,
+  'canary.config.opentsdb.tagPairs': `
+    <p><strong>Tags are optional</strong></p>
+    <p>These are the OpenTSDB key, value pairs used to further refine the metric.  Tag values not specified get the aggregator function applied to the values.</p>
+  `,    
   // These come (almost) verbatim from Stackdriver's Metric Explorer.
   'stackdriver.resourceType':
     'For Stackdriver, a set of time series is identified by a <strong>resource type</strong> and a metric type that has data from that resource type.',

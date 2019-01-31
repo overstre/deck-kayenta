@@ -117,6 +117,9 @@ export const updatePrometheusMetricDescriptorFilter = createAction<{ filter: str
 export const updateGraphiteMetricDescriptorFilter = createAction<{ filter: string }>(
   Actions.UPDATE_GRAPHITE_METRIC_DESCRIPTOR_FILTER,
 );
+export const updateOpentsdbMetricDescriptorFilter = createAction<{ filter: string }>(
+  Actions.UPDATE_OPENTSDB_METRIC_DESCRIPTOR_FILTER,
+);
 export const updateStackdriverMetricDescriptorFilter = createAction<{ filter: string }>(
   Actions.UPDATE_STACKDRIVER_METRIC_DESCRIPTOR_FILTER,
 );
@@ -146,3 +149,5 @@ export const updateSignalFxAggregationMethod = createAction<{ aggregationMethod:
 );
 export const updateSignalFxQueryPairs = createAction<IUpdateKeyValueListPayload>(Actions.UPDATE_SIGNAL_FX_QUERY_PAIRS);
 export const updateGraphiteMetricName = createAction<{ metricName: string }>(Actions.UPDATE_GRAPHITE_METRIC_NAME);
+export const updateOpentsdbMetricName = createAction<{ metricName: string }>(Actions.UPDATE_OPENTSDB_METRIC_NAME);
+export const updateOpentsdbQueryPairs = createAction<IUpdateKeyValueListPayload>(Actions.UPDATE_OPENTSDB_QUERY_PAIRS);

@@ -17,7 +17,8 @@ function MetricConfigurerDelegator({ editingMetric }: IMetricConfigurerDelegator
     const MetricConfigurer = config.metricConfigurer;
     return <MetricConfigurer />;
   } else {
-    return <p>Metric configuration has not been implemented for {editingMetric.query.type}.</p>;
+//    return <p>zMetric configuration has not been implementedz for {editingMetric.query.type}.</p>;
+    return <p>zMetric configuration has not been implementedz for {editingMetric.query.type}.</p>;
   }
 }
 

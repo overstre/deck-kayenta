@@ -181,6 +181,9 @@ const editingMetric = handleActions(
       ...state,
       query: { ...state.query, metricName: action.payload.metricName },
     }),
+    [Actions.UPDATE_OPENTSDB_METRIC_NAME]: (state: ICanaryMetricConfig, action: Action & any) => ({
+      ...state, query: { ...state.query, metricName: action.payload.metricName }
+    }),      
     [Actions.EDIT_INLINE_TEMPLATE]: (state: ICanaryMetricConfig, action: Action & any) => ({
       ...state,
       query: { ...state.query, customInlineTemplate: action.payload.value },

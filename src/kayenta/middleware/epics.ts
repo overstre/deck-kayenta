@@ -162,6 +162,28 @@ const updateGraphiteMetricDescriptionFilterEpic = (
       });
     });
 
+const updateOpentsdbMetricDescriptionFilterEpic = (
+  action$: Observable<Action & any>,
+  store: MiddlewareAPI<ICanaryState>,
+) =>
+  action$
+    .filter(typeMatches(Actions.UPDATE_OPENTSDB_METRIC_DESCRIPTOR_FILTER))
+    .filter(action => action.payload.filter && action.payload.filter.length > 2)
+    .debounceTime(200 /* milliseconds */)
+    .map(action => {
+      const [metricsAccountName] = store
+        .getState()
+        .data.kayentaAccounts.data.filter(
+          account => account.supportedTypes.includes(KayentaAccountType.MetricsStore) && account.type === 'opentsdb',
+        )
+        .map(account => account.name);
+
+      return Creators.loadMetricsServiceMetadataRequest({
+        filter: action.payload.filter,
+        metricsAccountName,
+      });
+    });
+
 const updateDatadogMetricDescriptionFilterEpic = (
   action$: Observable<Action & any>,
   store: MiddlewareAPI<ICanaryState>,
@@ -207,6 +229,7 @@ const rootEpic = combineEpics(
   loadCanaryRunRequestEpic,
   loadMetricSetPairEpic,
   updateGraphiteMetricDescriptionFilterEpic,
+  updateOpentsdbMetricDescriptionFilterEpic,    
   updatePrometheusMetricDescriptionFilterEpic,
   updateStackdriverMetricDescriptionFilterEpic,
   updateDatadogMetricDescriptionFilterEpic,
