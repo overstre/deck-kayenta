@@ -92,6 +92,6 @@ export const UPDATE_SIGNAL_FX_AGGREGATION_METHOD = 'update_signalfx_aggregation_
 export const UPDATE_SIGNAL_FX_QUERY_PAIRS = 'update_signalfx_query_pairs';
 export const UPDATE_GRAPHITE_METRIC_NAME = 'update_graphite_metric_name';
 export const UPDATE_OPENTSDB_METRIC_NAME = 'update_opentsdb_metric_name';
-export const UPDATE_OPENTSDB_TAG_PAIRS = 'update_opentsdb_tag_pairs';
 export const UPDATE_OPENTSDB_AGGREGATOR = 'update_opentsdb_aggregator';
 export const UPDATE_OPENTSDB_DOWNSAMPLE = 'update_opentsdb_downsample';
+export const UPDATE_OPENTSDB_TAG_PAIRS = 'update_opentsdb_tag_pairs';

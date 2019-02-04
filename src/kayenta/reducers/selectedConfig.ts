@@ -15,6 +15,7 @@ import { editingTemplate, IEditingTemplateState } from './editingTemplate';
 import { prometheusMetricConfigReducer } from './prometheusMetricConfig';
 import { signalFxMetricConfigReducer } from './signalFxMetricConfig';
 import { stackdriverMetricConfigReducer } from './stackdriverMetricConfig';
+import { opentsdbMetricConfigReducer } from './opentsdbMetricConfig';
 
 export interface ILoadState {
   state: AsyncRequestState;
@@ -512,7 +513,7 @@ const combined = combineReducers<ISelectedConfigState>({
   judge,
   metricList,
   editingMetric: (metric, action) =>
-    [editingMetric, prometheusMetricConfigReducer, signalFxMetricConfigReducer, stackdriverMetricConfigReducer].reduce(
+        [editingMetric, prometheusMetricConfigReducer, signalFxMetricConfigReducer, stackdriverMetricConfigReducer, opentsdbMetricConfigReducer].reduce(
       (s, reducer) => reducer(s, action),
       metric,
     ),
