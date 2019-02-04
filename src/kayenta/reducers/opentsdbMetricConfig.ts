@@ -27,6 +27,10 @@ export const opentsdbMetricConfigReducer = handleActions(
       ...state,
       query: { ...state.query, aggregator: action.payload.aggregator },
     }),
+    [Actions.UPDATE_OPENTSDB_DOWNSAMPLE]: (state: IOpentsdbMetricConfig, action: Action & any) => ({
+      ...state,
+      query: { ...state.query, downsample: action.payload.downsample },
+    }),      
   },
   null,
 );
