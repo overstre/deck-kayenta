@@ -150,4 +150,6 @@ export const updateSignalFxAggregationMethod = createAction<{ aggregationMethod:
 export const updateSignalFxQueryPairs = createAction<IUpdateKeyValueListPayload>(Actions.UPDATE_SIGNAL_FX_QUERY_PAIRS);
 export const updateGraphiteMetricName = createAction<{ metricName: string }>(Actions.UPDATE_GRAPHITE_METRIC_NAME);
 export const updateOpentsdbMetricName = createAction<{ metricName: string }>(Actions.UPDATE_OPENTSDB_METRIC_NAME);
-export const updateOpentsdbQueryPairs = createAction<IUpdateKeyValueListPayload>(Actions.UPDATE_OPENTSDB_QUERY_PAIRS);
+export const updateOpentsdbTagPairs = createAction<IUpdateKeyValueListPayload>(Actions.UPDATE_OPENTSDB_TAG_PAIRS);
+export const updateOpentsdbAggregator = createAction<{ aggregator: string }>(Actions.UPDATE_OPENTSDB_AGGREGATOR);
+export const updateOpentsdbDownsample = createAction<{ downsample: string }>(Actions.UPDATE_OPENTSDB_DOWNSAMPLE);
